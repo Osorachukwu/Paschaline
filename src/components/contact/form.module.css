@@ -1,0 +1,45 @@
+
+.container input {
+    padding-left: 10px;
+    outline: none;
+    border-bottom: 1px solid black;
+    height: 80px;
+    width: 100%;
+    /* background-color: red; */
+}
+
+/* .container > :nth-child(4) {
+    margin-bottom: 40px;
+    background-color: red;
+} */
+
+.container > textarea {
+    /* height: 80px; */
+    width: 100%;
+    outline: none;
+    border-bottom: 1px solid;
+    /* background-color: red; */
+    
+}
+.inputField {
+    width: 100%;
+}
+/* ☝This part can actually can be improved on at extrem width it the textarea and button expands more than the inputs */
+
+@media screen and (min-width: 600px) {
+    .container > div {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+
+    }
+    .container > textarea {
+        margin-top: 10px;
+    }
+    .container > button {
+        margin-top: 10px;
+        height: 4rem;
+        font-size: larger;
+    }
+
+}

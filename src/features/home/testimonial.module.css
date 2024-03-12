@@ -1,0 +1,67 @@
+/* .mobilecontainer {
+   display: none;
+} */
+.titlee {
+  font-weight: bold;
+  font-size: 20px;
+}
+.content {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  /* background-color: red; */
+ 
+}
+
+.contentOne {
+  background-color: lightcyan;
+  border-radius: 5px;
+  border: 1px solid lightcoral;
+  text-align: center;
+  padding: 20px;
+  height: 32%;
+  width: 50%;
+  margin-bottom: 10px;
+  position: absolute;
+  top: 210px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.contentTwo {
+    background-color: lightblue;
+    border-radius: 5px;
+    text-align: center;
+    padding: 20px;
+    height: 30%;
+    width: 50%;
+    margin-bottom: 10px;
+    position: absolute;
+    top: 100px;
+    left: 10px
+}
+.contentThree {
+    background-color: lightcoral;
+    border-radius: 5px;
+    text-align: center;
+    padding: 20px;
+    height: 30%;
+    width: 50%;
+    margin-bottom: 10px;
+    position: absolute;
+    top: 20px;
+    left: 68%;
+    /* white-space: nowrap; */
+    transform: translateX(-50%)
+} 
+/* ☝Check how to convert these to :nth-child() */
+
+
+@media screen and (min-width: 520px) {
+    .mobilecontainer {
+        display: none;
+    }
+    
+}
+
+
+
