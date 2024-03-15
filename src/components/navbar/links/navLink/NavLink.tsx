@@ -12,15 +12,13 @@ interface NavLinkProps {
 }
 
 export const NavLink: React.FC<NavLinkProps> = ({ item }) => {
-  const pathName = usePathname();
+  // const pathName = usePathname();
 
   return (
     <div>
       <Link
         href={item.path}
-        className={`md:block hidden text-white ${"min-w-24 py-3 text-center font-semibold"} ${
-          pathName === item.path ? "border-b-2 border-white" : ""
-        }`}
+        className="md:block hidden text-black hover:text-logoBlue" 
       >
         {item.title}
       </Link>
@@ -35,3 +33,7 @@ export const NavLink: React.FC<NavLinkProps> = ({ item }) => {
 // Python
 // SQL
 // Excel
+
+// {"min-w-24 py-3 text-center font-semibold"} ${
+//   pathName === item.path ? "border-b-2 border-black" : ""
+// }`}

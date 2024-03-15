@@ -7,7 +7,7 @@ import { Instagram } from "lucide-react";
 
 export const Footer: React.FC = () => {
   return (
-    <div className="bg-red-400">
+    <div className="bg-logoBlue">
       <nav className="flex justify-center gap-5 py-10">
         <Link href="https://web.facebook.com/ezewi.osora" > <Facebook /> </Link>
         <Link href="https://web.facebook.com/ezewi.osora" > <Twitter /> </Link>

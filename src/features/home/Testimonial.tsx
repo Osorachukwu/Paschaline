@@ -1,10 +1,21 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import styles from "./testimonial.module.css";
+import { Handshake } from "lucide-react";
+import { LineChart } from "lucide-react";
+import { Briefcase } from "lucide-react";
+import { SquarePen } from "lucide-react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Testimonial = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
+
   return (
-    <section>
-      <div className={styles.mobilecontainer}>
+    <section className="pt-8 sm:pt-0">
+      <div className={styles.mobilecontainer} data-aos="fade-up">
         <div className={styles.titlee}>
           <p>
             We've Helped <br /> Thousands Of Graduates <br /> Start Rewarding
@@ -34,32 +45,49 @@ const Testimonial = () => {
 
       {/* 👇 Desktop 👇 */}
 
-      <div className="hidden sm:block border-2 border-black mx-[5%] mt-0 md:mx-[15%]">
-        <div className="grid grid-cols-4 gap-1 md:gap-4">
-          <div className="p-2 bg-red-600">
+      <div className="text-xl hidden sm:block mx-[5%] -mt-8 md:mx-[15%]" data-aos="fade-up">
+        <div className="grid grid-cols-4 gap-1 md:gap-2">
+          <div className="p-2 text-logoborder-b-logoBlue bg-white text-logoBlue shadow-md border-2 py-6 rounded-md text-xl font-semibold">
             <p>
               We've Helped <br /> Thousands Of <br /> Graduates <br /> Start
               Rewarding Writing Careers.
             </p>
           </div>
 
-          <div className="p-2 bg-red-600 grid-rows-[]">
-            <p>
-              <span className="text-xl">30M</span> <br /> Demand for tech <br /> professionals in
+          <div className="px-6 bg-white  py-6 rounded-sm shadow-md border-b-logoBlue border-b-8 hover:-translate-y-1 hover:shadow-xl">
+            <div className="bg-mediumShade inline-block p-2 rounded-sm">
+              <LineChart size={40} className="text-logoBlue" />
+            </div>
+
+            <p className="mt-1">
+              <span className="font-bold">30M</span> <br /> Demand for tech{" "}
+              <br /> professionals in
               <br />
               writing by 2030
             </p>
           </div>
 
-          <div className="p-2 bg-red-600 grid-rows-[]">
-            <p>
-              <span className="text-xl">93%</span> <br /> Job offer letters <br /> through our CV's
+          <div className="px-6 bg-white  py-6 rounded-sm shadow-md border-b-logoBlue border-b-8 hover:-translate-y-1 hover:shadow-xl">
+            <div className="bg-mediumShade inline-block p-2 rounded-sm ">
+              <Briefcase size={40} className="text-logoBlue" />
+            </div>
+
+            <p className="mt-1">
+              <span className="text-xl font-bold">93%</span> <br /> Job offer
+              letters <br /> through our CV's
             </p>
           </div>
 
-          <div className="p-2 bg-red-600 grid-rows-[]">
-            <p>
-              <span className="text-xl">90%</span> <br /> Grant -Winning <br /> proposals
+          {/*  */}
+
+          <div className="px-6 bg-white  py-6 rounded-sm shadow-md border-b-logoBlue border-b-8 hover:-translate-y-1 hover:shadow-xl">
+            <div className="bg-mediumShade inline-block p-2 rounded-sm ">
+              <Handshake className=" text-logoBlue" size={40} />
+            </div>
+
+            <p className="mt-1">
+              <span className="text-xl font-bold">90%</span> <br /> Grant
+              -Winning <br /> proposals
             </p>
           </div>
         </div>

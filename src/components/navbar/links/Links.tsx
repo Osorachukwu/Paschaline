@@ -17,20 +17,20 @@ export const Links: React.FC = () => {
         },
         {
           title: "About",
-          path: "/about",
+          path: "#about",
         },
         {
           title: "Contact",
-          path: "/contact",
+          path: "#contact",
         },
         {
           title: "Blog",
-          path: "/blog",
+          path: "#about",
         },
       ];
 
   return (
-    <div className="flex items-center w-full justify-between gap-2 z-50 relative">
+    <div className="flex justify-end items-center gap-12 z-50 relative">
       {links.map((link) => (
         <NavLink item={link} key={link.title} />
       ))}

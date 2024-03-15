@@ -1,19 +1,30 @@
-import React from "react";
+'use client';
+import React, { useEffect } from "react";
 import Image from "next/image";
-import paschalinePhoto from "@/assets/paschalineTwo.png";
+import paschalinePhoto from "@/assets/look.png";
 import styles from "./hero.module.css";
-import logo from "@/assets/logo.jpg";
+// import logo from "@/assets/logo.jpg";
 import Homenav from "./Homenav";
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 
 const Hero: React.FC = () => {
+
+  useEffect(()=> {
+    Aos.init( {duration: 1000 });
+   }, []);
+   
+
   return (
-    <section className="container px-4 mx-auto bg-red-400 h-[95vh]">
+    <section className={` ${styles.heroBg} h-[80vh] heroBg`}>
       {/* 💥for both columns */}
-      <div className="h-full flex">
+      <div className="container h-full px-4 mx-auto flex">
         {/* 👇for the column-1 ie text */}
-        <div className="flex justify-end flex-col bg-green-300 h-full w-full pb-20">
-          <div className="">
-            <p className="text-3xl font-bold">Paschaline Creatives and Consult</p>
+        <div className="flex justify-end flex-col h-full w-full pb-20 md:pb-36 text-white">
+          <div className=""  data-aos = "fade-right">
+            <p className="text-3xl font-bold mb-3">
+              Paschaline's Consult
+            </p>
             <p>
               At Paschaline's Consult, we understand the importance of
               communication and presentation in achieving your goals, which is
@@ -25,12 +36,14 @@ const Hero: React.FC = () => {
         {/* ☝for the column-1 ie text */}
 
         {/* 👇for the column-2 ie photo */}
-        <div className="w-full bg-black hidden md:block">
-          <Image
-            src={paschalinePhoto}
-            alt="Paschaline's photograph"
-            className="h-full"
-          />
+        <div className="w-full hidden md:block">
+          <div className="">
+            <Image
+              src={paschalinePhoto}
+              alt="Paschaline's photograph"
+              className=""
+            />
+          </div>
         </div>
         {/* ☝for the column-2 ie photo */}
 
@@ -43,8 +56,6 @@ const Hero: React.FC = () => {
         {/* 👇The navBar & hambourger */}
         {/* <Homenav /> */}
         {/* ☝The navBar & hambourger */}
-
-
       </div>
       {/* 💥for both columns */}
     </section>
@@ -52,3 +63,6 @@ const Hero: React.FC = () => {
 };
 
 export default Hero;
+
+
+

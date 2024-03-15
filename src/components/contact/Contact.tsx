@@ -10,46 +10,55 @@ const Contact = () => {
     {
       icon: <Phone />,
       detail: "+(234) 81-3551-0975 ",
+      contactLink: "tel:+(234) 81-3551-0975 ",
     },
     {
       icon: <Phone />,
       detail: "+(234) 80-2800-5847 ",
+      contactLink: "tel:+(234) 80-2800-5847 ",
     },
     {
       icon: <Mail />,
       detail: "paschalinescreativesandconsult@gmail.com",
+      contactLink: "mailto:paschalinescreativesandconsult@gmail.com",
     },
     {
       icon: <MapPin />,
       detail: "example@email.com",
+      contactLink: "example@email.com",
     }
-   
   ];
 
   return (
-    <div className="container px-4 mx-auto border-3 py-10 lg:flex lg:justify-between lg:gap-10 lg:px-24">
-      <div>
+    <section
+      className="container px-4 mx-auto border-3 py-10 lg:flex lg:gap-10 lg:px-24"
+      id="contact"
+    >
+      <div className="lg:w-1/2 w-full">
         <div className="w-full">
           <p className="text-2xl font-bold">Find out more about us</p>
           <p className="text-base font-bold">
             Book a free consuktation or ask a question
           </p>
 
-          <div className="h-[2px] w-20 bg-black mt-10 rounded-xl"></div>
+          <div className="bg-black h-[1px] w-10  mt-10"></div>
+          {/* h-[2px] w-20 bg-black rounded-xl */}
         </div>
 
-        <div className="mt-10 w-full">
-          {contactDetails.map((contactDetail) => (
-            <div className="flex flex-wrap gap-1 pb-8">
-              <p>{contactDetail.icon}</p>
-              <p>{contactDetail.detail}</p>
-            </div>
+        <ul className="mt-10 w-full ">
+          {contactDetails.map((contactDetail, index) => (
+            <li className="pb-8" key={index}>
+              <a href={contactDetail.contactLink} className="flex gap-2">
+                <p className="text-logoBlue">{contactDetail.icon}</p>
+                <p>{contactDetail.detail}</p>
+              </a>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
 
       <Form />
-    </div>
+    </section>
   );
 };
 
