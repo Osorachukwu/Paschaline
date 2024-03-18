@@ -23,7 +23,7 @@ const Testimonial = () => {
           </p>
         </div>
 
-        <div style={{ display: "flex", justifyContent: "end" }}>
+        <div className="flex justify-end">
           <div className={styles.content}>
             <div className={styles.contentOne}>
               <p style={{ fontWeight: "bold" }}>30M</p>
@@ -47,7 +47,7 @@ const Testimonial = () => {
 
       <div className="text-xl hidden sm:block mx-[5%] -mt-8 md:mx-[15%]" data-aos="fade-up">
         <div className="grid grid-cols-4 gap-1 md:gap-2">
-          <div className="p-2 text-logoborder-b-logoBlue bg-white text-logoBlue shadow-md border-2 py-6 rounded-md text-xl font-semibold">
+          <div className="p-2 text-logoborder-b-logoBlue bg-logoBlue text-white shadow-md border-2 py-6 rounded-md text-2xl">
             <p>
               We've Helped <br /> Thousands Of <br /> Graduates <br /> Start
               Rewarding Writing Careers.

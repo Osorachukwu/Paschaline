@@ -7,7 +7,7 @@ import { Instagram } from "lucide-react";
 
 export const Footer: React.FC = () => {
   return (
-    <div className="bg-logoBlue">
+    <div className="bg-mediumShade">
       <nav className="flex justify-center gap-5 py-10">
         <Link href="https://web.facebook.com/ezewi.osora" > <Facebook /> </Link>
         <Link href="https://web.facebook.com/ezewi.osora" > <Twitter /> </Link>
@@ -16,7 +16,7 @@ export const Footer: React.FC = () => {
         
       </nav>
 
-      <div className="bg-slate-500 py-5 flex justify-center items-center text-sm">
+      <div className="bg-black text-white py-5 flex justify-center items-center text-sm">
       <p>
         2024 Paschaline Creatives and Consult. All rights reserved
         </p>

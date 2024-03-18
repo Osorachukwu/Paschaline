@@ -1,7 +1,15 @@
+"use client"
 import Statements from "@/features/home/Statements";
-import React from "react";
+import React, { useEffect } from "react";
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 
 const WeAre = () => {
+
+  useEffect(()=> {
+    Aos.init( {duration: 1000 });
+   }, []);
+
   const strategies = [
     {
       title: "The Genesis",
@@ -26,7 +34,7 @@ const WeAre = () => {
   ];
   return (
     <section className="" id="about">
-      <div>
+      <div data-aos = "fade-right">
         <div className="bg-mediumShade py-20 px-0 md:px-16 duration-300 transition-all lg:px-36 md:text-start text-center flex flex-col">
           <div className="w-[90%] md:w-full mx-auto">
             <div className="mb-8 inline-block">
@@ -49,7 +57,7 @@ const WeAre = () => {
 
         <Statements />
 
-        <div className="py-20 px-10 grid md:grid-cols-2 lg:grid-cols-4 gap-20 md:py-32 bg-black ">
+        <div className="py-20 px-10 grid md:grid-cols-2 lg:grid-cols-4 gap-20 md:py-32 bg-black" data-aos = "fade-right">
           {strategies.map((strategy, index) => (
             <div className="text-center hover:text-white hover:translate-y-1 text-white lg:text-opeqblue lg:transition-all lg:duration-500" key={index}>
               <p className="text-2xl font-bold mb-6">{strategy.title}</p>

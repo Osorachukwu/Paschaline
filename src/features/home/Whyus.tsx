@@ -2,6 +2,8 @@ import React from "react";
 import Image from "next/image";
 import teamPhoto1 from "@/assets/teamPhoto-2.jpg";
 import styles from "./whyus.module.css";
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 
 const WhyUs = () => {
   return (
@@ -9,7 +11,7 @@ const WhyUs = () => {
       style={{ padding: "80px 16px", backgroundColor: "#2A2C2C", color: "white" }}
       className={styles.whyus}
     >
-      <div>
+      <div data-aos = "fade-left">
         <div className={styles.sect1}>
           {/* className="md:w-20 md:bg-black" */}
           <p style={{ fontSize: "24px", fontWeight: "bold" }}>
@@ -37,7 +39,7 @@ const WhyUs = () => {
         </div>
       </div>
 
-      <div className="grid justify-center content-center border-2 border-logoBlue boxShadowMedium hover:-translate-y-1 transition-all duration-500 hover:border-white">
+      <div className="grid justify-center content-center border-2 border-logoBlue boxShadowMedium hover:-translate-y-1 transition-all duration-500 hover:border-white" data-aos = "fade-right">
         <Image src={teamPhoto1} alt="" />
       </div>
     </div>

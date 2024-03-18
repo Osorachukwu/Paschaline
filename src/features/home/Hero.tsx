@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
         {/* ☝for the column-1 ie text */}
 
         {/* 👇for the column-2 ie photo */}
-        <div className="w-full hidden md:block">
+        <div className="w-full hidden md:block mt-20 lg:mt-0">
           <div className="">
             <Image
               src={paschalinePhoto}

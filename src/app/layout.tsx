@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <section>
+        <section className="overflow-hidden">
           <NavBar />
           {children}
           <Footer />

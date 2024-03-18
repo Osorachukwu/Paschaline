@@ -10,7 +10,7 @@ import WeAre from "@/components/WeAre";
 
 export default function Home() {
   return (
-    <main className="">
+    <main>
       
       <Hero />
       <Testimonial />

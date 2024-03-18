@@ -4,6 +4,8 @@ import { Mail } from "lucide-react";
 import { Phone } from "lucide-react";
 import { MapPin } from "lucide-react";
 import styles from "./contact.module.css";
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 
 const Contact = () => {
   const contactDetails = [
@@ -32,7 +34,7 @@ const Contact = () => {
   return (
     <section
       className="container px-4 mx-auto border-3 py-10 lg:flex lg:gap-10 lg:px-24"
-      id="contact"
+      id="contact" data-aos = "fade-up"
     >
       <div className="lg:w-1/2 w-full">
         <div className="w-full">

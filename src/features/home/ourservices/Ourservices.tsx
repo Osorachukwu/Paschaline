@@ -1,6 +1,14 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import { SquarePen } from "lucide-react";
-
+import Image from "next/image";
+import ITConsult from "@/assets/servicesImgs/IT-consulting.jpg";
+import businessProposal from "@/assets/servicesImgs/business-proposal.jpg";
+import copywriting from "@/assets/servicesImgs/copywritting.jpg";
+import emailMarketing from "@/assets/servicesImgs/email-marketing.jpg";
+import socialMediaMarketing from "@/assets/servicesImgs/social-media-marketing.jpg";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 interface Service {
   icon: JSX.Element;
@@ -9,6 +17,10 @@ interface Service {
 }
 
 const Ourservices: React.FC = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
+
   const services: Service[] = [
     {
       icon: <SquarePen size={30} />,
@@ -48,24 +60,53 @@ const Ourservices: React.FC = () => {
     // },
   ];
 
-  let boxShaa =  "box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px";
+  let boxShaa = "box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px";
 
   return (
-    <section className="container px-4 mx-auto lg:px-40 xl:px-72 py-16">
-      <div className="py-2 text-xl">
-        <div>
-          <p className="font-bold text-center mb-6 underline">Our Services</p>
-          <p className="text-2xl text-center mb-6">Our business expert writting services</p>
-        </div>
+    <section className="w-full my-10">
+      <div className="container px-4 mx-auto lg:px-40 xl:px-72 py-16">
+        <div className="py-2 text-xl" data-aos="fade-up">
+          <div>
+            <p className="font-bold text-center mb-6 underline">Our Services</p>
+            <p className="text-2xl text-center mb-6">
+              Our business expert writting services
+            </p>
+          </div>
 
-        <div className="grid sm:grid-cols-2 gap-8 xl:gap-8 ">
-          {services.map((service, index) => (
-            <div className="flex flex-col gap-1 p-5 mb-2 rounded-md bg-mediumShade boxShadowLine" key={index}>
-              <p>{service.icon}</p>
-              <p className="text-lg font-bold">{service.title}</p>
-              <p>{service.description}</p>
-            </div>
-          ))}
+          <div className="grid sm:grid-cols-2 gap-8 xl:gap-8 ">
+            {services.map((service, index) => (
+              <div
+                className="flex flex-col gap-1 p-5 mb-2 rounded-md bg-mediumShade boxShadowLine"
+                key={index}
+              >
+                <p>{service.icon}</p>
+                <p className="text-lg font-bold">{service.title}</p>
+                <p>{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      {/* Carousel 👇 */}
+
+      <div
+        className="carousel carousel-center gap-4 bg-[#BDBFC1] py-6 mx-16"
+        data-aos="fade-up"
+      >
+        <div className="carousel-item">
+          <Image src={ITConsult} alt="test" />
+        </div>
+        <div className="carousel-item">
+          <Image src={businessProposal} alt="test" />
+        </div>
+        <div className="carousel-item">
+          <Image src={socialMediaMarketing} alt="test" />
+        </div>
+        <div className="carousel-item">
+          <Image src={copywriting} alt="test" />
+        </div>
+        <div className="carousel-item">
+          <Image src={emailMarketing} alt="test" />
         </div>
       </div>
     </section>
@@ -73,3 +114,5 @@ const Ourservices: React.FC = () => {
 };
 
 export default Ourservices;
+
+// paschalinesGitHub2024

@@ -3,31 +3,30 @@ import styles from "./form.module.css";
 
 const Form = () => {
 
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phoneNumber: '',
-    message: ''
-  });
+  // const [formData, setFormData] = useState({
+  //   firstName: '',
+  //   lastName: '',
+  //   email: '',
+  //   phoneNumber: '',
+  //   message: ''
+  // });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData({
+  //     ...formData,
+  //     [name]: value
+  //   });
+  // };
 
-  
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
 
-    const { firstName, lastName, email, phoneNumber, message } = formData;
-    const mailtoLink = mailto:christinotochukwu@gmail.com?subject=Contact Form Submission&body=First Name: ${firstName}%0D%0ALast Name: ${lastName}%0D%0AEmail: ${email}%0D%0APhone Number: ${phoneNumber}%0D%0AMessage: ${message};
+  //   const { firstName, lastName, email, phoneNumber, message } = formData;
+  //   const mailtoLink = mailto:christinotochukwu@gmail.com?subject=Contact Form Submission&body=First Name: ${firstName}%0D%0ALast Name: ${lastName}%0D%0AEmail: ${email}%0D%0APhone Number: ${phoneNumber}%0D%0AMessage: ${message};
 
-    window.open(mailtoLink);
-  };
+  //   window.open(mailtoLink);
+  // };
 
   return (
     <form className="lg:w-1/2 w-full">
@@ -38,16 +37,16 @@ const Form = () => {
             type="text"
             placeholder="First Name"
             name="firstName"
-            value={formData.firstName} 
-            onChange={handleChange}
+            // value={formData.firstName} 
+            // onChange={handleChange}
             className="pl-2 outline-none border-b-2 h-20 w-1/2"
           />
           <input
             type="text"
             placeholder="Email Address"
-            name="email" 
-            value={formData.email} 
-            onChange={handleChange}
+            // name="email" 
+            // value={formData.email} 
+            // onChange={handleChange}
             className="pl-2 outline-none border-b-2 h-20 w-1/2"
           />
         </div>
@@ -56,17 +55,17 @@ const Form = () => {
           <input
             type="text"
             placeholder="Last Name"
-            name="lastName" 
-            value={formData.lastName} 
-            onChange={handleChange}
+            // name="lastName" 
+            // value={formData.lastName} 
+            // onChange={handleChange}
             className="pl-2 outline-none border-b-2 h-20 w-full"
           />
           <input
             type="text"
             placeholder="Phone Number"
-            name="phoneNumber" 
-            value={formData.phoneNumber} 
-            onChange={handleChange}
+            // name="phoneNumber" 
+            // value={formData.phoneNumber} 
+            // onChange={handleChange}
             className="pl-2 outline-none border-b-2 h-20 w-full"
           />
         </div>
@@ -78,9 +77,9 @@ const Form = () => {
             cols={5}
             rows={2}
             placeholder="Message"
-            name="message" 
-            value={formData.message} 
-            onChange={handleChange}
+            // name="message" 
+            // value={formData.message} 
+            // onChange={handleChange}
             className="mx-auto w-full pl-2 border-b border-black outline-none sm:mt-2"
           ></textarea>
         </div>
