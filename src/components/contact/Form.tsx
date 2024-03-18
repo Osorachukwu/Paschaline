@@ -29,7 +29,7 @@ const Form = () => {
   // };
 
   return (
-    <form className="lg:w-1/2 w-full">
+    <form className="lg:w-1/2 w-full" data-aos = "fade-up">
       <div className="sm:flex sm:justify-center sm:gap-2 flex-col">
        
         <div className="flex gap-2 w-full">

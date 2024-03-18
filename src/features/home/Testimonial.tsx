@@ -18,7 +18,7 @@ const Testimonial = () => {
       <div className={styles.mobilecontainer} data-aos="fade-up">
         <div className={styles.titlee}>
           <p>
-            We've Helped <br /> Thousands Of Graduates <br /> Start Rewarding
+            We&apos;ve Helped <br /> Thousands Of Graduates <br /> Start Rewarding
             Writing Careers.
           </p>
         </div>
@@ -32,7 +32,7 @@ const Testimonial = () => {
 
             <div className={styles.contentTwo}>
               <p style={{ fontWeight: "bold" }}>85%</p>
-              <p>Job offer letters through our CV's</p>
+              <p>Job offer letters through our CV&apos;s</p>
             </div>
 
             <div className={styles.contentThree}>
@@ -47,9 +47,9 @@ const Testimonial = () => {
 
       <div className="text-xl hidden sm:block mx-[5%] -mt-8 md:mx-[15%]" data-aos="fade-up">
         <div className="grid grid-cols-4 gap-1 md:gap-2">
-          <div className="p-2 text-logoborder-b-logoBlue bg-logoBlue text-white shadow-md border-2 py-6 rounded-md text-2xl">
+          <div className="p-2 bg-logoBlue text-white shadow-md py-6 rounded-md text-2xl hover:text-black hover:bg-white hover:font-bold">
             <p>
-              We've Helped <br /> Thousands Of <br /> Graduates <br /> Start
+              We&apos;ve Helped <br /> Thousands Of <br /> Graduates <br /> Start
               Rewarding Writing Careers.
             </p>
           </div>
@@ -74,7 +74,7 @@ const Testimonial = () => {
 
             <p className="mt-1">
               <span className="text-xl font-bold">93%</span> <br /> Job offer
-              letters <br /> through our CV's
+              letters <br /> through our CV&apos;s
             </p>
           </div>
 

@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Paschaline Creatives and Consult",
-  description: "At Paschaline's Consult, we understand the importance of communication and presentation in achieving your goals, which is why we are committed to delivering high-quality, customized solutions that resonate with your audience and drive results",
+  description: "At Paschaline&apos;s Consult, we understand the importance of communication and presentation in achieving your goals, which is why we are committed to delivering high-quality, customized solutions that resonate with your audience and drive results",
 };
 
 export default function RootLayout({

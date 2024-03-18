@@ -15,7 +15,7 @@ const WhyUs = () => {
         <div className={styles.sect1}>
           {/* className="md:w-20 md:bg-black" */}
           <p style={{ fontSize: "24px", fontWeight: "bold" }}>
-            Why Choose Paschaline's Consult?
+            Why Choose Paschaline&apos;s Consult?
           </p>
 
           <p style={{ lineHeight: "20px" }}>

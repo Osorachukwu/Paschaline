@@ -34,9 +34,8 @@ const Contact = () => {
   return (
     <section
       className="container px-4 mx-auto border-3 py-10 lg:flex lg:gap-10 lg:px-24"
-      id="contact" data-aos = "fade-up"
-    >
-      <div className="lg:w-1/2 w-full">
+      id="contact">
+      <div className="lg:w-1/2 w-full" data-aos = "fade-up">
         <div className="w-full">
           <p className="text-2xl font-bold">Find out more about us</p>
           <p className="text-base font-bold">

@@ -23,10 +23,10 @@ const Hero: React.FC = () => {
         <div className="flex justify-end flex-col h-full w-full pb-20 md:pb-36 text-white">
           <div className=""  data-aos = "fade-right">
             <p className="text-3xl font-bold mb-3">
-              Paschaline's Consult
+              Paschaline&apos;s Consult
             </p>
             <p>
-              At Paschaline's Consult, we understand the importance of
+              At Paschaline&apos;s Consult, we understand the importance of
               communication and presentation in achieving your goals, which is
               why we are committed to delivering high-quality, customized
               solutions that resonate with your audience and drive results.
@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
           <div className="">
             <Image
               src={paschalinePhoto}
-              alt="Paschaline's photograph"
+              alt="Paschaline&apos;s photograph"
               className=""
             />
           </div>
