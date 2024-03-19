@@ -25,7 +25,7 @@ export const Links: React.FC = () => {
         },
         {
           title: "Blog",
-          path: "#about",
+          path: "/blog",
         },
       ];
 

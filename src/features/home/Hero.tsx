@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
             <p className="text-3xl font-bold mb-3">
               Paschaline&apos;s Consult
             </p>
-            <p>
+            <p className="text-lg">
               At Paschaline&apos;s Consult, we understand the importance of
               communication and presentation in achieving your goals, which is
               why we are committed to delivering high-quality, customized

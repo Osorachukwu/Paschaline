@@ -47,7 +47,7 @@ const Testimonial = () => {
 
       <div className="text-xl hidden sm:block mx-[5%] -mt-8 md:mx-[15%]" data-aos="fade-up">
         <div className="grid grid-cols-4 gap-1 md:gap-2">
-          <div className="p-2 bg-logoBlue text-white shadow-md py-6 rounded-md text-2xl hover:text-black hover:bg-white hover:font-bold">
+          <div className="p-2 bg-logoBlue text-white shadow-md py-6 rounded-md text-2xl">
             <p>
               We&apos;ve Helped <br /> Thousands Of <br /> Graduates <br /> Start
               Rewarding Writing Careers.

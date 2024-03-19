@@ -75,6 +75,9 @@ export const NavBar: React.FC = () => {
                   <Link href="#contact" data-aos="fade-right">
                     Contact
                   </Link>
+                  <Link href="/blog" data-aos="fade-right">
+                    Blog
+                  </Link>
                 </div>
               )}
             </div>

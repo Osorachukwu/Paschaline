@@ -34,17 +34,14 @@ const Statements = () => {
 
   return (
     <section className="container px-4 mx-auto py-8 relative ">
-      <div className="h-full flex flex-col items-center md:items-start border-2 border-logoBlue">
+      <div className="h-full flex flex-col items-center md:items-start lg:border-2 lg:border-logoBlue">
         <div className="h-full sm:max-w-[60%] flex flex-col justify-center gap-4 lg:gap-1 mb-3 py-5 xl:pl-52">
           {statementDetais.map((statement, index) => (
             <div className="h-full lg:max-w-[30rem]" key={index}>
-              <div className="flex gap-2">
-                <p>o</p>
                 <p className="text-xl font-semibold text-logoBlue">
                   {statement.title}
                 </p>
-              </div>
-              <p>{statement.description}</p>
+              <p className="pl-2">{statement.description}</p>
             </div>
           ))}
         </div>

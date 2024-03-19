@@ -60,11 +60,11 @@ const Ourservices: React.FC = () => {
     // },
   ];
 
-  let boxShaa = "box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px";
+  // let boxShaa = "box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px";
 
   return (
-    <section className="w-full my-10">
-      <div className="container px-4 mx-auto lg:px-40 xl:px-72 py-16">
+    <section className="w-full my-4">
+      <div className="container px-4 mx-auto lg:px-40 xl:px-72 py-10">
         <div className="py-2 text-xl" data-aos="fade-up">
           <div>
             <p className="font-bold text-center mb-6 underline">Our Services</p>
@@ -76,7 +76,7 @@ const Ourservices: React.FC = () => {
           <div className="grid sm:grid-cols-2 gap-8 xl:gap-8 ">
             {services.map((service, index) => (
               <div
-                className="flex flex-col gap-1 p-5 mb-2 rounded-md bg-mediumShade boxShadowLine"
+                className="flex flex-col gap-1 p-5 mb-2 rounded-md shadow-md border"
                 key={index}
               >
                 <p>{service.icon}</p>
@@ -90,9 +90,8 @@ const Ourservices: React.FC = () => {
       {/* Carousel 👇 */}
 
       <div
-        className="carousel carousel-center gap-4 bg-[#BDBFC1] py-6 mx-16"
-        data-aos="fade-up"
-      >
+        className="carousel carousel-center gap-4 bg-[#BDBFC1] lg:py-6 lg:mx-16"
+        data-aos="fade-up">
         <div className="carousel-item">
           <Image src={ITConsult} alt="test" />
         </div>
