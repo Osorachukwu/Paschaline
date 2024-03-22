@@ -24,12 +24,12 @@ const WeAre = () => {
     {
       title: "Our Mission",
       description:
-        " With a commitment to empowering individuals and  organizations to communicate their ideas with clarity and conviction, Paschaline&apos;s Consult was born in 2022. Our mission remains rooted in Paschaline&apos;s vision of enabling people to transform their ideas into tangible articles of change.",
+        " With a commitment to empowering individuals and  organizations to communicate their ideas with clarity and conviction, Paschaline's Consult was born in 2022. Our mission remains rooted in Paschaline&apos;s vision of enabling people to transform their ideas into tangible articles of change.",
     },
     {
       title: "Embracing Change, Driving Impact",
       description:
-        " Since our inception, Paschaline&apos;s Consult has evolved into a trusted partner for businesses seeking to enhance their communication strategies. With a blend of expertise, creativity, and dedication, we continue to help our clients unlock the power of their words to drive meaningful change in their industries and beyond.",
+        " Since our inception, Paschaline's Consult has evolved into a trusted partner for businesses seeking to enhance their communication strategies. With a blend of expertise, creativity, and dedication, we continue to help our clients unlock the power of their words to drive meaningful change in their industries and beyond.",
     },
   ];
   return (

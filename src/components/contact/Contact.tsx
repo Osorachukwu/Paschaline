@@ -39,7 +39,7 @@ const Contact = () => {
         <div className="w-full">
           <p className="text-2xl font-bold">Find out more about us</p>
           <p className="text-base font-bold">
-            Book a free consuktation or ask a question
+            Book a free consultation or ask a question
           </p>
 
           <div className="bg-black h-[1px] w-10  mt-10"></div>

@@ -16,11 +16,11 @@ const Hero: React.FC = () => {
    
 
   return (
-    <section className={` ${styles.heroBg} h-[80vh] heroBg`}>
+    <section className={` ${styles.heroBg} h-[80vh] heroBg `}>
       {/* 💥for both columns */}
-      <div className="container h-full px-4 mx-auto flex">
+      <div className="container h-full px-4 mx-auto">
         {/* 👇for the column-1 ie text */}
-        <div className="flex justify-end flex-col h-full w-full pb-20 md:pb-36 text-white">
+        <div className="h-full w-full pb-10 md:pb-36 text-white flex flex-col justify-end sm:w-[70%] lg:w-[50%] ">
           <div className=""  data-aos = "fade-right">
             <p className="text-3xl font-bold mb-3">
               Paschaline&apos;s Consult
@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
         {/* ☝for the column-1 ie text */}
 
         {/* 👇for the column-2 ie photo */}
-        <div className="w-full hidden md:block mt-20 lg:mt-0">
+        {/* <div className="w-full hidden md:block mt-20 lg:mt-0">
           <div className="">
             <Image
               src={paschalinePhoto}
@@ -44,18 +44,8 @@ const Hero: React.FC = () => {
               className=""
             />
           </div>
-        </div>
-        {/* ☝for the column-2 ie photo */}
-
-        {/* 👇Logo */}
-        {/* <div className="h-20 w-20 absolute top-20 left-10">
-          <Image src={logo} alt="" />
         </div> */}
-        {/* ☝Logo */}
-
-        {/* 👇The navBar & hambourger */}
-        {/* <Homenav /> */}
-        {/* ☝The navBar & hambourger */}
+        {/* ☝for the column-2 ie photo */}
       </div>
       {/* 💥for both columns */}
     </section>

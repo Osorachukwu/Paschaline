@@ -1,70 +1,60 @@
+"use client"
 import React, { useState } from "react";
 import styles from "./form.module.css";
+import { useForm, ValidationError } from "@formspree/react";
 
 const Form = () => {
-
-  // const [formData, setFormData] = useState({
-  //   firstName: '',
-  //   lastName: '',
-  //   email: '',
-  //   phoneNumber: '',
-  //   message: ''
-  // });
-
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setFormData({
-  //     ...formData,
-  //     [name]: value
-  //   });
-  // };
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-
-  //   const { firstName, lastName, email, phoneNumber, message } = formData;
-  //   const mailtoLink = mailto:christinotochukwu@gmail.com?subject=Contact Form Submission&body=First Name: ${firstName}%0D%0ALast Name: ${lastName}%0D%0AEmail: ${email}%0D%0APhone Number: ${phoneNumber}%0D%0AMessage: ${message};
-
-  //   window.open(mailtoLink);
-  // };
+  const [state, handleSubmit] = useForm("mwkgnyye");
+  if (state.succeeded) {
+    return <p className="text-logoBlue text-xl font-semibold">Thanks for reaching out! We'll get back to you shortly.</p>;
+  }
 
   return (
-    <form className="lg:w-1/2 w-full" data-aos = "fade-up">
+    <form
+      className="lg:w-1/2 w-full"
+      data-aos="fade-up"
+      target="_blank"
+      onSubmit={handleSubmit}
+    >
       <div className="sm:flex sm:justify-center sm:gap-2 flex-col">
-       
         <div className="flex gap-2 w-full">
           <input
             type="text"
             placeholder="First Name"
-            name="firstName"
-            // value={formData.firstName} 
+            name="first_name"
+            maxLength={30}
+            // value={formData.firstName}
             // onChange={handleChange}
             className="pl-2 outline-none border-b-2 h-20 w-1/2"
           />
           <input
-            type="text"
+            type="email"
             placeholder="Email Address"
-            // name="email" 
-            // value={formData.email} 
+            name="email"
+            maxLength={50}
+            // value={formData.email}
             // onChange={handleChange}
             className="pl-2 outline-none border-b-2 h-20 w-1/2"
           />
+          <ValidationError prefix="Email" field="email" errors={state.errors} />
         </div>
 
         <div className="flex gap-2 w-full">
           <input
             type="text"
             placeholder="Last Name"
-            // name="lastName" 
-            // value={formData.lastName} 
+            name="last_name"
+            maxLength={30}
+            // value={formData.lastName}
             // onChange={handleChange}
             className="pl-2 outline-none border-b-2 h-20 w-full"
           />
           <input
-            type="text"
+            type="tel"
             placeholder="Phone Number"
-            // name="phoneNumber" 
-            // value={formData.phoneNumber} 
+            name="phone_number"
+            maxLength={15}
+            // value={formData.phoneNumber}
             // onChange={handleChange}
             className="pl-2 outline-none border-b-2 h-20 w-full"
           />
@@ -72,20 +62,29 @@ const Form = () => {
 
         <div className="w-full">
           <textarea
-            name=""
             id=""
             cols={5}
             rows={2}
             placeholder="Message"
-            // name="message" 
-            // value={formData.message} 
+            name="message"
+            maxLength={1000}
+            // value={formData.message}
             // onChange={handleChange}
             className="mx-auto w-full pl-2 border-b border-black outline-none sm:mt-2"
           ></textarea>
+          <ValidationError
+            prefix="Message"
+            field="message"
+            errors={state.errors}
+          />
         </div>
       </div>
 
-      <button className="btn rounded-md bg-black text-white w-full sm:mt-10 sm:h-16 sm:text-lg">
+      <button
+        type="submit"
+        disabled={state.submitting}
+        className="btn rounded-md bg-logoBlue hover:text-black text-white w-full sm:mt-10 sm:h-16 sm:text-lg"
+      >
         Send Message
       </button>
     </form>
@@ -93,3 +92,68 @@ const Form = () => {
 };
 
 export default Form;
+
+// <form action="https://formspree.io/f/xyyrdbne" method="POST" className="lg:w-1/2 w-full" data-aos = "fade-up" target="_blank">
+// <div className="sm:flex sm:justify-center sm:gap-2 flex-col">
+
+//   <div className="flex gap-2 w-full">
+//     <input
+//       type="text"
+//       placeholder="First Name"
+//       name="first_name"
+//       maxLength={30}
+//       // value={formData.firstName}
+//       // onChange={handleChange}
+//       className="pl-2 outline-none border-b-2 h-20 w-1/2"
+//     />
+//     <input
+//       type="email"
+//       placeholder="Email Address"
+//       name="email"
+//       maxLength={50}
+//       // value={formData.email}
+//       // onChange={handleChange}
+//       className="pl-2 outline-none border-b-2 h-20 w-1/2"
+//     />
+//   </div>
+
+//   <div className="flex gap-2 w-full">
+//     <input
+//       type="text"
+//       placeholder="Last Name"
+//       name="last_name"
+//       maxLength={30}
+//       // value={formData.lastName}
+//       // onChange={handleChange}
+//       className="pl-2 outline-none border-b-2 h-20 w-full"
+//     />
+//     <input
+//       type="tel"
+//       placeholder="Phone Number"
+//       name="phone_number"
+//       maxLength={15}
+//       // value={formData.phoneNumber}
+//       // onChange={handleChange}
+//       className="pl-2 outline-none border-b-2 h-20 w-full"
+//     />
+//   </div>
+
+//   <div className="w-full">
+//     <textarea
+//       id=""
+//       cols={5}
+//       rows={2}
+//       placeholder="Message"
+//       name="message"
+//       maxLength={1000}
+//       // value={formData.message}
+//       // onChange={handleChange}
+//       className="mx-auto w-full pl-2 border-b border-black outline-none sm:mt-2"
+//     ></textarea>
+//   </div>
+// </div>
+
+// <button type="submit" className="btn rounded-md bg-logoBlue hover:text-black text-white w-full sm:mt-10 sm:h-16 sm:text-lg">
+//   Send Message
+// </button>
+// </form>
