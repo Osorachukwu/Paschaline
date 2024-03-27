@@ -25,7 +25,7 @@ const Form = () => {
             maxLength={30}
             // value={formData.firstName}
             // onChange={handleChange}
-            className="pl-2 outline-none border-b-2 h-20 w-1/2"
+            className="pl-2 outline-none border-b-2 h-20 max-w-xs w-1/2"
           />
           <input
             type="email"
@@ -70,7 +70,7 @@ const Form = () => {
             maxLength={1000}
             // value={formData.message}
             // onChange={handleChange}
-            className="mx-auto w-full pl-2 border-b border-black outline-none sm:mt-2"
+            className="mx-auto w-full pl-2 border-b-2 outline-none sm:mt-2"
           ></textarea>
           <ValidationError
             prefix="Message"

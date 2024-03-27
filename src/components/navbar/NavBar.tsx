@@ -42,7 +42,7 @@ export const NavBar: React.FC = () => {
   }, []);
 
   return (
-    <div className="h-12 md:h-16 w-full z-50 bg-mediumShade shadow-lg fixed">
+    <div className="h-12 md:h-16 w-full z-50 bg-mediumShade dark:bg-mediumShade shadow-lg fixed">
       <div className="h-full container pl-8 pr-10 mx-auto">
         <nav className=" w-full h-full mx-auto flex justify-between items-center">
           <div className="w-1/2 h-full flex items-center ">

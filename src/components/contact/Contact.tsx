@@ -26,7 +26,7 @@ const Contact = () => {
     },
     {
       icon: <MapPin />,
-      detail: "example@email.com",
+      detail: "Address: No 6 Robinson Street, Adekunle Mile 12, Lagos Nigeria",
       contactLink: "example@email.com",
     }
   ];
@@ -49,7 +49,7 @@ const Contact = () => {
         <ul className="mt-10 w-full ">
           {contactDetails.map((contactDetail, index) => (
             <li className="pb-8" key={index}>
-              <a href={contactDetail.contactLink} className="flex gap-2">
+              <a href={contactDetail.contactLink} className="flex gap-2 flex-wrap">
                 <p className="text-logoBlue">{contactDetail.icon}</p>
                 <p>{contactDetail.detail}</p>
               </a>
