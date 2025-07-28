@@ -24,40 +24,35 @@ const Ourservices: React.FC = () => {
   const services: Service[] = [
     {
       icon: <SquarePen size={30} />,
-      title: "CV Writing:",
+      title: "Professional Writing Services:",
       description:
-        "Stand out from the crowd with a professionally crafted curriculum vitae that highlights your achievements and qualifications.",
+        "Expertly crafted documents, including CVs, personal statements, letters of intent, and business plans.",
     },
     {
       icon: <SquarePen size={30} />,
-      title: "Proposals:",
+      title: "Academic Writing:",
       description:
-        "Whether you're pitching a project, seeking funding, or submitting a business proposal, we'll ensure your document is clear, concise, winning and impactful.",
+        "High-quality theses, research papers, and dissertations.",
     },
-    // {
-    //   icon: "🧑",
-    //   title: "Website content",
-    //   description:
-    //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, corrupti.",
-    // },
-    // {
-    //   icon: "🧑",
-    //   title: "Blog writing",
-    //   description:
-    //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, corrupti.",
-    // }
-    // {
-    //   icon: "🧑",
-    //   title: "Article writing",
-    //   description:
-    //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, corrupti.",
-    // },
-    // {
-    //   icon: "🧑",
-    //   title: "Product description",
-    //   description:
-    //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, corrupti.",
-    // },
+    {
+      icon: <SquarePen size={30} />,
+      title: "Grant Writing:",
+      description:
+        "Well-structured grant proposals to increase funding chances.",
+    },
+    {
+      icon: <SquarePen size={30} />,
+      title: "Scholarship Applications:",
+      description:
+        "Personalized support for underserved youth applying for scholarships.",
+    },
+    {
+      icon: <SquarePen size={30} />,
+      title: "Standard Operating Procedures (SOPs): ",
+      description:
+        "Customized SOPs for businesses and organizations.",
+    },
+    
   ];
 
   // let boxShaa = "box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px";

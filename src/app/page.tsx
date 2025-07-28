@@ -7,6 +7,8 @@ import Ourservices from "@/features/home/ourservices/Ourservices";
 import Image from "next/image";
 import Statements from "../features/home/Statements";
 import WeAre from "@/components/WeAre";
+import Gallery from "@/components/Gallery";
+import AltGallery from "@/components/AltGallery";
 
 export default function Home() {
   return (
@@ -17,7 +19,9 @@ export default function Home() {
       <Ourservices />
       <WeAre />
       <WhyUs />
+      <AltGallery />
       <Contact />
+      <Gallery />
       
     </main>
   );
