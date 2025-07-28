@@ -43,7 +43,7 @@ const WeAre = () => {
             </div>
             <div data-aos="fade-right" className="space-y-4 ">
               <p>
-                Pascaline's Consult operates on a dual platform. Our business
+                Pascaline`&apos;`s Consult operates on a dual platform. Our business
                 wing, focused on strategy and development, crafts compelling
                 documents that drive business growth. Our impact wing empowers
                 underserved youth by providing guidance and support in securing
@@ -59,14 +59,14 @@ const WeAre = () => {
               you covered. */}
               </p>
               <p>
-                Pascaline's Consult is committed to bridging the opportunity
+                Pascaline`&apos;`s Consult is committed to bridging the opportunity
                 divide for 300,000 underserved Nigerian youths by 2050. Through
                 strategic partnerships with local and international
                 organizations, we provide sponsorship and support for education
                 and career advancement. Our expertise in developing compelling
                 content enables these young people to access better
                 opportunities, driving meaningful impact and contributing to
-                Nigeria's socio-economic development.
+                Nigeria`&apos;`s socio-economic development.
               </p>
             </div>
             {/* Accordion daisy */}
@@ -88,7 +88,7 @@ const WeAre = () => {
                 <input type="radio" name="my-accordion-3" />
                 <div className="collapse-title font-semibold">Our Solution</div>
                 <div className="collapse-content text-sm">
-                  At Pascaline's Consult, we're committed to breaking these
+                  At Pascaline`&apos;`s Consult, we`&apos;`re committed to breaking these
                   cycles by helping this youth write their stories to their
                   helpers (organizations), which have the capacity to sponsor
                   their education and remove them from the streets.
@@ -121,7 +121,7 @@ const WeAre = () => {
                 <div className="collapse-content text-sm space-y-2">
                   <p>
                     By bridging the gap, we contribute to helping enhance
-                    education and opportunities, and we're helping to build more
+                    education and opportunities, and we`&apos;`re helping to build more
                     equitable and prosperous communities.
                   </p>
                   <p>
