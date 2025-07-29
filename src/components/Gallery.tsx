@@ -1,4 +1,5 @@
 "use client"
+import type { StaticImageData } from "next/image";
 import Image from "next/image";
 import React, { useState } from "react";
 import { X } from "lucide-react";
@@ -36,12 +37,12 @@ export default function Gallery() {
   ];
 
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState<StaticImageData | null>(null);
 
-  function openLightbox(image) {
-    setSelectedImage(image);
-    setIsOpen(true);
-  }
+function openLightbox(image: StaticImageData) {
+  setSelectedImage(image);
+  setIsOpen(true);
+}
 
   function closeLightbox() {
     setIsOpen(false);
