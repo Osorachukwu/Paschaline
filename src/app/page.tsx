@@ -19,9 +19,7 @@ export default function Home() {
       <Ourservices />
       <WeAre />
       <WhyUs />
-      <AltGallery />
       <Contact />
-      <Gallery />
       
     </main>
   );
