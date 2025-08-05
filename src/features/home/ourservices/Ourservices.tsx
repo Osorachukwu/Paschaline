@@ -58,7 +58,7 @@ const Ourservices: React.FC = () => {
   // let boxShaa = "box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px";
 
   return (
-    <section className="w-full my-4">
+    <section className="w-full my-4" id="services">
       <div className="container px-4 mx-auto lg:px-40 xl:px-72 py-10">
         <div className="py-2 text-xl" data-aos="fade-up">
           <div>

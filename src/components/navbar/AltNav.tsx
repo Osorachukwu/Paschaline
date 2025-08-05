@@ -7,7 +7,7 @@ import { Menu } from "lucide-react";
 
 export default function AltNav() {
   return (
-    <div className="navbar bg-neutral text-neutral-content flex justify-between bg-mediumShade dark:bg-mediumShade shadow-lg fixed z-50">
+    <div className="navbar text-black flex justify-between bg-mediumShade dark:bg-mediumShade shadow-lg fixed z-50">
       <button className="btn btn-ghost h-auto">
         <Link href="/" data-aos="fade-right">
           <Image
@@ -29,8 +29,23 @@ export default function AltNav() {
             className="dropdown-content menu rounded-md z-1 w-52 p-2 bg-mediumShade dark:bg-mediumShade shadow-lg"
           >
             <li>
-              <Link href="#about" data-aos="fade-right">
+              <Link href="/" data-aos="fade-right">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/#about" data-aos="fade-right">
                 About
+              </Link>
+            </li>
+            <li>
+              <Link href="/#services" data-aos="fade-right">
+                Our Services
+              </Link>
+            </li>
+            <li>
+              <Link href="/#contact" data-aos="fade-right">
+                Contact us
               </Link>
             </li>
             <li>
@@ -45,13 +60,23 @@ export default function AltNav() {
       <nav className="hidden md:block">
         <ul className="flex gap-10 px-16">
           <li>
-            <Link href="#about" data-aos="fade-right">
+            <Link href="/" data-aos="fade-right">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link href="/#about" data-aos="fade-right">
               About
             </Link>
           </li>
           <li>
-            <Link href="#contact" data-aos="fade-right">
-              Contact
+            <Link href="/#services" data-aos="fade-right">
+              Our Services
+            </Link>
+          </li>
+          <li>
+            <Link href="/#contact" data-aos="fade-right">
+              Contact us
             </Link>
           </li>
           <li>
