@@ -31,8 +31,7 @@ const Ourservices: React.FC = () => {
     {
       icon: <SquarePen size={30} />,
       title: "Academic Writing:",
-      description:
-        "High-quality theses, research papers, and dissertations.",
+      description: "High-quality theses, research papers, and dissertations.",
     },
     {
       icon: <SquarePen size={30} />,
@@ -49,10 +48,8 @@ const Ourservices: React.FC = () => {
     {
       icon: <SquarePen size={30} />,
       title: "Standard Operating Procedures (SOPs): ",
-      description:
-        "Customized SOPs for businesses and organizations.",
+      description: "Customized SOPs for businesses and organizations.",
     },
-    
   ];
 
   // let boxShaa = "box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px";
@@ -84,7 +81,7 @@ const Ourservices: React.FC = () => {
       </div>
       {/* Carousel 👇 */}
 
-      <div
+      {/* <div
         className="carousel carousel-center gap-4 bg-[#BDBFC1] lg:py-6 lg:mx-16"
         data-aos="fade-up">
         <div className="carousel-item">
@@ -102,6 +99,20 @@ const Ourservices: React.FC = () => {
         <div className="carousel-item">
           <Image src={emailMarketing} alt="test" />
         </div>
+      </div> */}
+      <div className="rounded-md overflow-hidden px-1">
+        <video
+          className="w-full h-full object-cover rounded-md"
+          autoPlay
+          loop
+          muted
+          controls
+        >
+          <source
+            src="/WhatsApp Video 2025-08-05 at 21.57.35_70fa0976.mp4"
+            type="video/mp4"
+          />
+        </video>
       </div>
     </section>
   );
