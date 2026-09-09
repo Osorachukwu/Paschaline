@@ -1,32 +1,140 @@
+@import 'aos/dist/aos.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-*, :root, ::before, ::after {
+/* ==========================================================================
+   1. BRAND CSS DESIGN TOKENS
+   ========================================================================== */
+:root {
+  --color-primary: 9 9 11;          /* Deep Onyx Black #09090B */
+  --color-secondary: 37 99 235;     /* Logo Cobalt Blue #2563EB */
+  --color-accent: 59 130 246;       /* Royal Accent Blue #3B82F6 */
+  --color-neutral: 24 24 27;        /* Dark Slate #18181B */
+  --color-surface: 255 255 255;    /* Pure White #FFFFFF */
+  --color-bg-alt: 248 250 252;     /* Ice Blue Slate #F8FAFC */
+
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(37, 99, 235, 0.15);
+  --glass-shadow: 0 20px 40px -15px rgba(9, 9, 11, 0.08);
+}
+
+/* ==========================================================================
+   2. GLOBAL RESETS & ACCESSIBILITY
+   ========================================================================== */
+@layer base {
+  *, ::before, ::after {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    /* background-color: #FFFFFF; */
-}
+  }
 
-html, body{
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  html, body {
     min-width: 350px;
+    @apply bg-white text-zinc-800 font-sans antialiased selection:bg-blue-600 selection:text-white min-h-screen flex flex-col;
+  }
+
+  /* Accessibility Focus Rings */
+  :focus-visible {
+    @apply outline-none ring-2 ring-blue-600 ring-offset-2 ring-offset-white;
+  }
 }
 
-.boxShadowLight {
-    /* box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px; */
-    
-    
-}
-.boxShadowLine {
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-    
-    
-}
-.boxShadowModrate {
-    /* box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px; */
-    /* box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset; */
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+/* ==========================================================================
+   3. CUSTOM BRAND & UTILITY CLASSES
+   ========================================================================== */
+@layer utilities {
+  /* Logo-Inspired Gradient Text */
+  .text-gradient-brand {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-zinc-950 via-blue-600 to-blue-500;
+  }
+
+  .text-gradient-blue {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-500;
+  }
+
+  /* Hero Background Mesh Pattern */
+  .hero-brand-pattern {
+    background-color: #09090b;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.25) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+      radial-gradient(at 50% 50%, rgba(9, 9, 11, 0.95) 0px, transparent 100%);
+  }
+
+  /* Glassmorphic Cards */
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+
+  /* Performance Helper for Heavy Sections */
+  .content-visibility-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 1000px;
+  }
 }
 
+/* ==========================================================================
+   4. CUSTOM BUTTON & SHADOW CLASSES (REPLACING DAISYUI)
+   ========================================================================== */
+@layer components {
+  .btn-primary {
+    @apply bg-zinc-950 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 hover:bg-zinc-800 active:scale-[0.98] shadow-md;
+  }
 
+  .btn-secondary {
+    @apply bg-blue-600 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 hover:bg-blue-700 active:scale-[0.98] shadow-md shadow-blue-600/20;
+  }
+
+  .btn-outline {
+    @apply border border-zinc-300 text-zinc-900 font-semibold px-6 py-3 rounded-xl transition-all duration-200 hover:bg-zinc-100 active:scale-[0.98];
+  }
+
+  /* Existing Shadow Utilities Preserved */
+  .boxShadowLight {
+    @apply shadow-light;
+  }
+
+  .boxShadowLine {
+    @apply shadow-line;
+  }
+
+  .boxShadowModrate {
+    @apply shadow-moderate;
+  }
+}
+
+/* ==========================================================================
+   5. AOS & SCROLLBAR OVERRIDES
+   ========================================================================== */
+[data-aos] {
+  will-change: transform, opacity;
+  pointer-events: auto !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}

@@ -3,13 +3,14 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { NavBar } from "@/components/navbar/NavBar";
 import { Footer } from "@/components/footer/Footer";
-import AltNav from "@/components/navbar/AltNav";
+import AosProvider from "@/components/AosProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Paschaline Creatives and Consult",
-  description: "At Paschaline&apos;s Consult, we understand the importance of communication and presentation in achieving your goals, which is why we are committed to delivering high-quality, customized solutions that resonate with your audience and drive results",
+  title: "Paschaline's Consult | Executive & Educational Writing Consultancy",
+  description:
+    "At Paschaline's Consult, we deliver high-quality, customized solutions for corporate SOPs, grant proposals, pitch decks, and scholarship applications that drive results.",
 };
 
 export default function RootLayout({
@@ -19,13 +20,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        <section className="overflow-hidden">
-          <AltNav />
-          {/* <NavBar /> */}
-          {children}
-          <Footer />
-        </section>
+      <body className={inter.className}>
+        <AosProvider>
+          <section className="overflow-hidden min-h-screen flex flex-col justify-between">
+            <NavBar />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+          </section>
+        </AosProvider>
       </body>
     </html>
   );

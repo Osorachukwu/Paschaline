@@ -1,23 +1,22 @@
 import Contact from "@/components/contact/Contact";
 import { Footer } from "@/components/footer/Footer";
 import Hero from "@/features/home/Hero";
-import Testimonial from "@/features/home/Testimonial";
 import WhyUs from "@/features/home/Whyus";
 import Ourservices from "@/features/home/ourservices/Ourservices";
 import Image from "next/image";
 import Statements from "../features/home/Statements";
-import WeAre from "@/components/WeAre";
 import Gallery from "@/components/Gallery";
 import AltGallery from "@/components/AltGallery";
+import ImpactStats from "@/features/home/ImpactStats";
+import AboutUs from "@/components/AboutUs";
 
 export default function Home() {
   return (
     <main>
-      
       <Hero />
-      <Testimonial />
+      <ImpactStats />
       <Ourservices />
-      <WeAre />
+      <AboutUs />
       <WhyUs />
       <Contact />
       
