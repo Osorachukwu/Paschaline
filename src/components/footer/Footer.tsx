@@ -17,19 +17,19 @@ interface NavLink {
 }
 
 const QUICK_LINKS: NavLink[] = [
-  { label: 'About Us', href: '#about' },
-  { label: 'Why Choose Us', href: '#why-us' },
-  { label: 'Key Deliverables', href: '#services' },
-  { label: 'Social Impact', href: '#impact' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Why Choose Us', href: '/#why-us' },
+  { label: 'Key Deliverables', href: '/services' },
+  { label: 'Social Impact', href: '/#impact' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 const SERVICES_LINKS: NavLink[] = [
-  { label: 'Statement of Purpose (SOP)', href: '#services' },
-  { label: 'Letters of Intent (LOI)', href: '#services' },
-  { label: 'Grant Proposals', href: '#services' },
-  { label: 'Investor Pitch Decks', href: '#services' },
-  { label: 'Corporate SOPs & Memos', href: '#services' },
+  { label: 'Statement of Purpose (SOP)', href: '/services' },
+  { label: 'Letters of Intent (LOI)', href: '/services' },
+  { label: 'Grant Proposals', href: '/services' },
+  { label: 'Investor Pitch Decks', href: '/services' },
+  { label: 'Corporate SOPs & Memos', href: '/services' },
 ];
 
 export const Footer: React.FC = () => {

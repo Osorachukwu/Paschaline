@@ -128,7 +128,7 @@ export const OurServices: React.FC = () => {
                 {/* DIRECT ACTION LINK */}
                 <div className="pt-6 mt-6 border-t border-zinc-100">
                   <Link
-                    href="#contact"
+                    href="/contact"
                     className="inline-flex items-center gap-2 text-xs font-bold text-brand-blue hover:text-blue-700 transition-colors group/link"
                   >
                     <span>Request Service Consultation</span>
@@ -158,7 +158,7 @@ export const OurServices: React.FC = () => {
 
             <div className="pt-6 relative z-10">
               <Link
-                href="#contact"
+                href="/contact"
                 className="btn-secondary w-full text-center text-xs font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2"
               >
                 <span>Speak with Lead Consultant</span>

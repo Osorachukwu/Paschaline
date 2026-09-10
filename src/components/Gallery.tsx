@@ -1,8 +1,9 @@
-"use client"
-import type { StaticImageData } from "next/image";
-import Image from "next/image";
-import React, { useState } from "react";
-import { X } from "lucide-react";
+"use client";
+
+import React, { useState, useEffect, useCallback } from "react";
+import Image, { type StaticImageData } from "next/image";
+import { X, ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
+
 import img1 from "@/assets/gallery/img1.jpg";
 import img2 from "@/assets/gallery/img2.jpg";
 import img3 from "@/assets/gallery/img3.jpg";
@@ -18,76 +19,169 @@ import img12 from "@/assets/gallery/img12.jpg";
 import img13 from "@/assets/gallery/img13.jpg";
 import img14 from "@/assets/gallery/img14.jpg";
 
+const GALLERY_IMAGES: StaticImageData[] = [
+  img1,
+  img2,
+  img3,
+  img4,
+  img5,
+  img6,
+  img7,
+  img8,
+  img9,
+  img10,
+  img11,
+  img12,
+  img13,
+  img14,
+];
+
 export default function Gallery() {
-  let items = [
-    img1,
-    img2,
-    img3,
-    img4,
-    img5,
-    img6,
-    img7,
-    img8,
-    img9,
-    img10,
-    img11,
-    img12,
-    img13,
-    img14,
-  ];
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState<StaticImageData | null>(null);
+  const openLightbox = (index: number) => {
+    setSelectedIndex(index);
+  };
 
-function openLightbox(image: StaticImageData) {
-  setSelectedImage(image);
-  setIsOpen(true);
-}
+  const closeLightbox = () => {
+    setSelectedIndex(null);
+  };
 
-  function closeLightbox() {
-    setIsOpen(false);
-    setSelectedImage(null);
-  }
+  const showNext = useCallback(() => {
+    if (selectedIndex === null) return;
+    setSelectedIndex((prev) => (prev === null ? 0 : (prev + 1) % GALLERY_IMAGES.length));
+  }, [selectedIndex]);
+
+  const showPrev = useCallback(() => {
+    if (selectedIndex === null) return;
+    setSelectedIndex((prev) =>
+      prev === null ? 0 : (prev - 1 + GALLERY_IMAGES.length) % GALLERY_IMAGES.length
+    );
+  }, [selectedIndex]);
+
+  // Keyboard controls & body scroll lock
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (selectedIndex === null) return;
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowRight") showNext();
+      if (e.key === "ArrowLeft") showPrev();
+    };
+
+    if (selectedIndex !== null) {
+      document.body.style.overflow = "hidden";
+      window.addEventListener("keydown", handleKeyDown);
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selectedIndex, showNext, showPrev]);
+
   return (
-    <div className="py-10 md:py-28 bg-gray-200">
-      <div className="text-center mt-28 sm:mt-20 mb-10">
-        <p className="mb-2 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-3xl lg:text-4xl">Gallery</p>
-        <div className="flex justify-center">
-          <div className="h-1 w-20 bg-blue-500"></div>
+    <section className="py-16 md:py-24 bg-zinc-50 border-t border-zinc-200" id="gallery">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* SECTION HEADER */}
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <span className="text-xs font-bold uppercase tracking-widest text-brand-blue bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
+            Visual Highlights
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-black text-brand-black tracking-tight mt-3 mb-4">
+            Our Gallery & Impact
+          </h2>
+          <div className="h-1 w-16 bg-brand-blue mx-auto rounded-full" />
+        </div>
+
+        {/* IMAGE GRID */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+          {GALLERY_IMAGES.map((photo, index) => (
+            <div
+              key={index}
+              onClick={() => openLightbox(index)}
+              className="group relative h-64 sm:h-72 w-full overflow-hidden rounded-2xl bg-zinc-200 border border-zinc-200/80 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer"
+            >
+              <Image
+                src={photo}
+                alt={`Paschalines Creatives and Consult gallery item ${index + 1}`}
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+              />
+              
+              {/* HOVER OVERLAY */}
+              <div className="absolute inset-0 bg-brand-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-white/90 text-brand-black flex items-center justify-center transform scale-75 group-hover:scale-100 transition-transform duration-300 shadow-md">
+                  <Maximize2 className="w-5 h-5" />
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
-      <div className="grid grid-cols-1 justify-items-center sm:grid-cols-2 md:grid-cols-3 gap-5 px-4">
-        {items.map((photo, i) => (
-          <div key={i} className="hover:scale-[1.05] relative w-full max-h-64 md:max-h-96 border" onClick={() => openLightbox(photo)}>
+      {/* LIGHTBOX MODAL */}
+      {selectedIndex !== null && (
+        <div
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
+          onClick={closeLightbox}
+        >
+          {/* CLOSE BUTTON */}
+          <button
+            onClick={closeLightbox}
+            aria-label="Close modal"
+            className="absolute top-4 right-4 sm:top-6 sm:right-6 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors z-50"
+          >
+            <X className="w-6 h-6" />
+          </button>
+
+          {/* PREVIOUS BUTTON */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              showPrev();
+            }}
+            aria-label="Previous image"
+            className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors z-50"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+
+          {/* LIGHTBOX IMAGE DISPLAY */}
+          <div
+            className="relative max-w-5xl max-h-[85vh] w-full h-full flex items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
             <Image
-              className="object-cover h-full w-full rounded-lg cursor-pointer"
-              src={photo}
-              alt="Paschalines gallery"
+              src={GALLERY_IMAGES[selectedIndex]}
+              alt={`Expanded view gallery item ${selectedIndex + 1}`}
+              fill
+              priority
+              className="object-contain rounded-lg"
             />
           </div>
-        ))}
-      </div>
 
-      {/* Lightbox Modal */}
-      {isOpen && selectedImage && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50" onClick={closeLightbox}>
-          <div className="relative">
-            <Image src={selectedImage} alt="Selected Road Image" className="h-auto max-w-full rounded-lg" />
-            <button onClick={closeLightbox} className="absolute top-4 right-4 text-white text-2xl font-bold cursor-pointer"><X className="text-gray-300 bg-gray-800" /></button>
+          {/* NEXT BUTTON */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              showNext();
+            }}
+            aria-label="Next image"
+            className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors z-50"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+
+          {/* IMAGE COUNTER */}
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/80 text-xs font-semibold px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm">
+            {selectedIndex + 1} / {GALLERY_IMAGES.length}
           </div>
         </div>
       )}
-    </div>
-    // <div>
-    //   <p>gagagsfsf</p>
-    //   <div className="grid grid-cols-1 ">
-    //     {items.map((item, i) => (
-    //       <div key={i} className="relative w-full h-[350px]">
-    //         <Image src={item} alt="" fill className="object-cov" />
-    //       </div>
-    //     ))}
-    //   </div>
-    // </div>
+    </section>
   );
 }

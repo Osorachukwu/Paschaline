@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Phone, Mail, ArrowRight, ChevronRight } from 'lucide-react';
 import { FaFacebookF, FaTwitter, FaWhatsapp } from 'react-icons/fa';
+import logo from "@/assets/logo-removebg-preview.png"
 
 const NAV_LINKS = [
   { name: 'Home', href: '/' },
@@ -34,7 +35,7 @@ export function NavBar() {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 mb-56">
       {/* 1. TOP ANNOUNCEMENT / QUICK CONTACT BAR */}
       <div className="bg-brand-black text-zinc-300 text-xs py-2 px-4 sm:px-8 border-b border-zinc-800/80">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
@@ -90,7 +91,7 @@ export function NavBar() {
           <Link href="/" className="flex items-center gap-3 group">
             <div className="relative w-10 h-10 sm:w-11 sm:h-11 flex-shrink-0">
               <Image
-                src="/logo-removebg-preview-NOW.webp"
+                src={logo}
                 alt="Paschaline's Consult Logo"
                 fill
                 priority
@@ -133,7 +134,7 @@ export function NavBar() {
           {/* DESKTOP ACTION BUTTON */}
           <div className="hidden lg:flex items-center gap-4">
             <Link
-              href="#contact"
+              href="/contact"
               className="btn-secondary text-sm flex items-center gap-2 group"
             >
               <span>Get Started</span>
@@ -156,7 +157,7 @@ export function NavBar() {
 
       {/* 3. MOBILE MENU OVERLAY */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 top-[88px] bg-brand-black/60 backdrop-blur-sm z-40">
+        <div className="lg:hidden fixed inset-0 top-[95px] bg-brand-black/60 backdrop-blur-sm z-40">
           <div className="bg-white border-b border-zinc-200 p-6 shadow-2xl space-y-4 animate-in slide-in-from-top duration-300">
             
             <div className="flex flex-col space-y-3">
@@ -175,7 +176,7 @@ export function NavBar() {
 
             <div className="pt-4 border-t border-zinc-100 flex flex-col gap-3">
               <Link
-                href="#contact"
+                href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
                 className="btn-secondary w-full text-center flex items-center justify-center gap-2"
               >
