@@ -53,6 +53,10 @@
    3. CUSTOM BRAND & UTILITY CLASSES
    ========================================================================== */
 @layer utilities {
+  .page-offset {
+    padding-top: 104px;
+  }
+
   /* Logo-Inspired Gradient Text */
   .text-gradient-brand {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-zinc-950 via-blue-600 to-blue-500;

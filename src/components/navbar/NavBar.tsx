@@ -35,7 +35,7 @@ export function NavBar() {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 mb-56">
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       {/* 1. TOP ANNOUNCEMENT / QUICK CONTACT BAR */}
       <div className="bg-brand-black text-zinc-300 text-xs py-2 px-4 sm:px-8 border-b border-zinc-800/80">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
@@ -157,7 +157,7 @@ export function NavBar() {
 
       {/* 3. MOBILE MENU OVERLAY */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 top-[95px] bg-brand-black/60 backdrop-blur-sm z-40">
+        <div className="lg:hidden fixed inset-0 top-[104px] bg-brand-black/60 backdrop-blur-sm z-40">
           <div className="bg-white border-b border-zinc-200 p-6 shadow-2xl space-y-4 animate-in slide-in-from-top duration-300">
             
             <div className="flex flex-col space-y-3">

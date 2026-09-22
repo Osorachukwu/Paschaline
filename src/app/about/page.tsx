@@ -1,5 +1,9 @@
 import AboutUs from "@/components/AboutUs";
 
 export default function AboutPage() {
-  return <AboutUs />;
+  return (
+    <div className="page-offset">
+      <AboutUs />
+    </div>
+  );
 }
