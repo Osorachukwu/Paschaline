@@ -1,9 +1,5 @@
-import Ourservices from "@/features/home/ourservices/Ourservices";
+import { redirect } from "next/navigation";
 
 export default function ServicesPage() {
-  return (
-    <div className="page-offset">
-      <Ourservices />
-    </div>
-  );
+  redirect('/business-advisory');
 }

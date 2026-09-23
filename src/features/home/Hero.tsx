@@ -1,113 +1,31 @@
-'use client';
-
-import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Sparkles, CheckCircle2 } from 'lucide-react';
-import teamPhoto from '@/assets/teamPhoto-2.jpg';
+import Image from 'next/image';
+import { ArrowUpRight, Check } from 'lucide-react';
+import teamPhoto from '@/assets/teamPhoto-3.jpg';
 
-export const Hero: React.FC = () => {
-  return (
-    <section className="relative min-h-[85vh] lg:min-h-[90vh] flex items-center justify-center overflow-hidden bg-brand-black">
-      
-      {/* BACKGROUND IMAGE CONTAINER */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src={teamPhoto}
-          alt="Paschaline Creatives and Consult Team in session"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-        />
-        
-        {/* OVERLAY GRADIENTS FOR READABILITY */}
-        {/* Base dark tint */}
-        <div className="absolute inset-0 bg-black/60 z-10" />
-        
-        {/* Directional gradient to add depth and focus */}
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-black/50 to-black/70 z-10" />
-      </div>
-
-      {/* HERO CONTENT OVERLAY */}
-      <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 text-center text-white space-y-8">
-        
-        {/* BADGE */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-white/10 backdrop-blur-md border border-white/20 text-white shadow-lg" data-aos="fade-down">
-          <Sparkles className="w-4 h-4 text-brand-blue" />
-          <span>Strategic Consulting & Youth Mentorship</span>
-        </div>
-
-        {/* MAIN HEADLINE */}
-        <h1 
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1]"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
-          Crafting High-Impact <br className="hidden sm:inline" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-300 to-indigo-300">
-            Corporate & Academic Solutions
-          </span>
-        </h1>
-
-        {/* SUBTITLE */}
-        <p 
-          className="text-base sm:text-lg md:text-xl text-zinc-300 max-w-3xl mx-auto leading-relaxed font-normal"
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
-          We assist corporate brands, entrepreneurs, and global scholarship applicants with tailored SOPs, corporate proposals, grant writing, and strategy consulting.
-        </p>
-
-        {/* FEATURE HIGHLIGHTS */}
-        <div 
-          className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs sm:text-sm text-zinc-300 pt-2"
-          data-aos="fade-up"
-          data-aos-delay="250"
-        >
-          <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-brand-blue" />
-            <span>Tailored Proposals & SOPs</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-brand-blue" />
-            <span>98%+ Success Rate</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-brand-blue" />
-            <span>Youth Empowerment Mentorship</span>
-          </div>
-        </div>
-
-        {/* ACTION BUTTONS */}
-        <div 
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
-          data-aos="fade-up"
-          data-aos-delay="300"
-        >
-          <Link
-            href="#contact"
-            className="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-blue hover:bg-blue-600 text-white font-bold text-sm sm:text-base transition-all duration-200 shadow-lg shadow-blue-500/25 flex items-center justify-center gap-2 group active:scale-[0.98]"
-          >
-            <span>Book Free Consultation</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
-
-          <Link
-            href="#services"
-            className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-bold text-sm sm:text-base border border-white/20 transition-all duration-200 flex items-center justify-center active:scale-[0.98]"
-          >
-            Explore Services
-          </Link>
-        </div>
-
-      </div>
-
-      {/* BOTTOM ACCENT GRADIENT BAR */}
-      <div className="absolute bottom-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-brand-blue to-transparent z-20 opacity-80" />
-
-    </section>
-  );
-};
-
-export default Hero;
+export default function Hero() {
+   return (
+     <section className="hero-grid relative overflow-hidden bg-slate-900 text-white">
+       <Image
+         src={teamPhoto}
+         alt="Paschaline's Consult team collaborating"
+         fill
+         priority
+         sizes="100vw"
+         className="object-cover object-center"
+       />
+       <div className="absolute inset-0 bg-slate-800/25" />
+       <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-900/75 to-slate-900/50" />
+       <div className="mx-auto grid min-h-[calc(100vh-5rem)] max-w-7xl items-center gap-12 px-4 py-24 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:px-8 lg:py-32">
+         <div className="relative z-10 max-w-3xl" data-aos="fade-up">
+           <p className="eyebrow text-amber-400">Paschaline&apos;s Consult</p>
+           <h1 className="mt-6 font-display text-5xl leading-[1.02] sm:text-7xl">Strategic clarity. <em className="text-amber-400">Built for execution.</em></h1>
+           <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">Premium advisory, executive communication, and financial modeling designed to sharpen strategy, secure growth, and position your brand for sustainable success.</p>
+           <div className="mt-9 flex flex-col gap-3 sm:flex-row"><a href={process.env.NEXT_PUBLIC_CALENDLY_URL || '#contact'} className="btn-secondary inline-flex items-center justify-center gap-2">Schedule a strategic consultation <ArrowUpRight className="h-4 w-4" /></a><Link href="#practice-areas" className="btn-outline border-slate-500 text-white hover:bg-white/10">Explore advisory services</Link></div>
+           <div className="mt-12 grid gap-4 border-t border-slate-700 pt-6 text-sm text-slate-300 sm:grid-cols-3"><span className="flex items-center gap-2"><Check className="h-4 w-4 text-amber-400" />Executive-level rigour</span><span className="flex items-center gap-2"><Check className="h-4 w-4 text-amber-400" />Data-backed strategy</span><span className="flex items-center gap-2"><Check className="h-4 w-4 text-amber-400" />Clear growth pathways</span></div>
+         </div>
+         <div className="relative z-10 border-l border-amber-500/40 pl-8 lg:pl-12" data-aos="fade-left"><p className="font-display text-7xl text-amber-400 sm:text-8xl">02</p><p className="mt-3 max-w-xs text-2xl leading-tight text-white">Practice areas. One standard: work that moves the decision forward.</p><p className="mt-6 max-w-sm text-sm leading-6 text-slate-400">For business leaders, growing organizations, ambitious founders, and early-career professionals.</p></div>
+       </div>
+     </section>
+   );
+}

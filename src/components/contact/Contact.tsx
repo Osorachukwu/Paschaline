@@ -27,8 +27,8 @@ const CONTACT_DETAILS: ContactItem[] = [
   {
     icon: Mail,
     title: 'Direct Email',
-    detail: 'paschalinescreativesandconsult@gmail.com',
-    href: 'mailto:paschalinescreativesandconsult@gmail.com',
+    detail: 'adaobi@bypaschalinesconsult.com',
+    href: 'mailto:adaobi@bypaschalinesconsult.com',
   },
   {
     icon: MapPin,
@@ -73,7 +73,7 @@ export const Contact: React.FC = () => {
                     href={item.href}
                     target={item.href.startsWith('http') ? '_blank' : '_self'}
                     rel="noopener noreferrer"
-                    className="p-4 rounded-xl bg-white border border-zinc-200 shadow-sm hover:border-brand-blue/50 hover:shadow-md transition-all duration-300 flex items-start gap-4 group block"
+                    className="p-4 rounded-xl bg-white border border-zinc-200 shadow-sm hover:border-brand-blue/50 hover:shadow-md transition-all duration-300 flex items-start gap-4 group"
                   >
                     <div className="w-10 h-10 rounded-lg bg-blue-50 text-brand-blue flex items-center justify-center flex-shrink-0 group-hover:bg-brand-blue group-hover:text-white transition-colors">
                       <IconComponent className="w-5 h-5" />

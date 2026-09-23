@@ -25,8 +25,9 @@ export const Form: React.FC = () => {
     <form onSubmit={handleSubmit} className="space-y-6">
       
       <div className="space-y-1">
-        <h3 className="text-xl font-bold text-brand-black">Send Us a Message</h3>
-        <p className="text-xs text-zinc-500">Fill out the form below to get started with your consultation.</p>
+        <p className="eyebrow text-amber-700">Inquiry form</p>
+        <h3 className="mt-3 font-display text-3xl text-slate-900">Tell us what needs to move.</h3>
+        <p className="text-sm leading-6 text-slate-600">Share the context and the team will reply from adaobi@bypaschalinesconsult.com.</p>
       </div>
 
       <div className="space-y-4">
@@ -43,8 +44,8 @@ export const Form: React.FC = () => {
               name="first_name"
               maxLength={30}
               required
-              placeholder="e.g. Osorachukwu"
-              className="w-full px-4 py-3 rounded-xl border border-zinc-200 bg-zinc-50/50 text-sm focus:outline-none focus:border-brand-blue focus:bg-white transition-all placeholder:text-zinc-400"
+              placeholder="e.g. John"
+              className="field"
             />
           </div>
 
@@ -58,8 +59,8 @@ export const Form: React.FC = () => {
               name="last_name"
               maxLength={30}
               required
-              placeholder="e.g. Ezewi"
-              className="w-full px-4 py-3 rounded-xl border border-zinc-200 bg-zinc-50/50 text-sm focus:outline-none focus:border-brand-blue focus:bg-white transition-all placeholder:text-zinc-400"
+              placeholder="e.g. Doe"
+              className="field"
             />
           </div>
         </div>
@@ -77,7 +78,7 @@ export const Form: React.FC = () => {
               maxLength={50}
               required
               placeholder="name@example.com"
-              className="w-full px-4 py-3 rounded-xl border border-zinc-200 bg-zinc-50/50 text-sm focus:outline-none focus:border-brand-blue focus:bg-white transition-all placeholder:text-zinc-400"
+              className="field"
             />
             <ValidationError prefix="Email" field="email" errors={state.errors} className="text-xs text-red-500 mt-1" />
           </div>
@@ -92,7 +93,7 @@ export const Form: React.FC = () => {
               name="phone_number"
               maxLength={15}
               placeholder="+234..."
-              className="w-full px-4 py-3 rounded-xl border border-zinc-200 bg-zinc-50/50 text-sm focus:outline-none focus:border-brand-blue focus:bg-white transition-all placeholder:text-zinc-400"
+              className="field"
             />
           </div>
         </div>
@@ -109,7 +110,7 @@ export const Form: React.FC = () => {
             maxLength={1000}
             required
             placeholder="Tell us about your project, SOP goals, corporate proposal needs, or general inquiries..."
-            className="w-full px-4 py-3 rounded-xl border border-zinc-200 bg-zinc-50/50 text-sm focus:outline-none focus:border-brand-blue focus:bg-white transition-all placeholder:text-zinc-400 resize-none"
+            className="field resize-y"
           />
           <ValidationError prefix="Message" field="message" errors={state.errors} className="text-xs text-red-500 mt-1" />
         </div>
@@ -120,7 +121,7 @@ export const Form: React.FC = () => {
       <button
         type="submit"
         disabled={state.submitting}
-        className="w-full py-4 px-6 rounded-xl bg-brand-blue text-white font-bold text-sm hover:bg-blue-600 active:scale-[0.99] transition-all duration-200 shadow-md shadow-blue-500/20 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+        className="btn-secondary w-full flex items-center justify-center gap-2 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {state.submitting ? (
           <>

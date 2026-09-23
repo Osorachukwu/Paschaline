@@ -8,16 +8,13 @@
    1. BRAND CSS DESIGN TOKENS
    ========================================================================== */
 :root {
-  --color-primary: 9 9 11;          /* Deep Onyx Black #09090B */
-  --color-secondary: 37 99 235;     /* Logo Cobalt Blue #2563EB */
-  --color-accent: 59 130 246;       /* Royal Accent Blue #3B82F6 */
-  --color-neutral: 24 24 27;        /* Dark Slate #18181B */
-  --color-surface: 255 255 255;    /* Pure White #FFFFFF */
-  --color-bg-alt: 248 250 252;     /* Ice Blue Slate #F8FAFC */
-
-  --glass-bg: rgba(255, 255, 255, 0.85);
-  --glass-border: rgba(37, 99, 235, 0.15);
-  --glass-shadow: 0 20px 40px -15px rgba(9, 9, 11, 0.08);
+  --color-primary: 15 23 42;
+  --color-secondary: 217 119 6;
+  --color-accent: 245 158 11;
+  --color-neutral: 71 85 105;
+  --color-surface: 255 255 255;
+  --color-bg-alt: 248 250 252;
+  --color-cream: 250 248 243;
 }
 
 /* ==========================================================================
@@ -40,12 +37,12 @@
 
   html, body {
     min-width: 350px;
-    @apply bg-white text-zinc-800 font-sans antialiased selection:bg-blue-600 selection:text-white min-h-screen flex flex-col;
+    @apply bg-white text-slate-700 font-sans antialiased selection:bg-amber-600 selection:text-white min-h-screen flex flex-col;
   }
 
   /* Accessibility Focus Rings */
   :focus-visible {
-    @apply outline-none ring-2 ring-blue-600 ring-offset-2 ring-offset-white;
+    @apply outline-none ring-2 ring-amber-600 ring-offset-2 ring-offset-white;
   }
 }
 
@@ -53,37 +50,17 @@
    3. CUSTOM BRAND & UTILITY CLASSES
    ========================================================================== */
 @layer utilities {
+  .font-display { font-family: var(--font-display), Georgia, serif; }
+  .font-sans { font-family: var(--font-sans), sans-serif; }
+  .eyebrow { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; }
+  .field { width: 100%; border: 1px solid rgb(203 213 225); background: white; padding: 0.75rem 1rem; font-size: 0.875rem; color: rgb(15 23 42); outline: none; }
+  .field:focus { border-color: rgb(217 119 6); box-shadow: 0 0 0 2px rgb(217 119 6 / 0.12); }
+  .hero-grid { background-image: linear-gradient(120deg, rgb(15 23 42), rgb(30 41 59)); }
   .page-offset {
     padding-top: 104px;
   }
 
   /* Logo-Inspired Gradient Text */
-  .text-gradient-brand {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-zinc-950 via-blue-600 to-blue-500;
-  }
-
-  .text-gradient-blue {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-500;
-  }
-
-  /* Hero Background Mesh Pattern */
-  .hero-brand-pattern {
-    background-color: #09090b;
-    background-image: 
-      radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.25) 0px, transparent 50%),
-      radial-gradient(at 100% 100%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
-      radial-gradient(at 50% 50%, rgba(9, 9, 11, 0.95) 0px, transparent 100%);
-  }
-
-  /* Glassmorphic Cards */
-  .glass-card {
-    background: var(--glass-bg);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid var(--glass-border);
-    box-shadow: var(--glass-shadow);
-  }
-
   /* Performance Helper for Heavy Sections */
   .content-visibility-auto {
     content-visibility: auto;
@@ -96,15 +73,15 @@
    ========================================================================== */
 @layer components {
   .btn-primary {
-    @apply bg-zinc-950 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 hover:bg-zinc-800 active:scale-[0.98] shadow-md;
+    @apply bg-slate-900 text-white font-semibold px-6 py-3 rounded-md transition-all duration-200 hover:bg-slate-800 active:scale-[0.98] shadow-md;
   }
 
   .btn-secondary {
-    @apply bg-blue-600 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 hover:bg-blue-700 active:scale-[0.98] shadow-md shadow-blue-600/20;
+    @apply bg-amber-600 text-white font-semibold px-6 py-3 rounded-md transition-all duration-200 hover:bg-amber-700 active:scale-[0.98] shadow-md shadow-amber-600/20;
   }
 
   .btn-outline {
-    @apply border border-zinc-300 text-zinc-900 font-semibold px-6 py-3 rounded-xl transition-all duration-200 hover:bg-zinc-100 active:scale-[0.98];
+    @apply border border-slate-300 text-slate-900 font-semibold px-6 py-3 rounded-md transition-all duration-200 hover:bg-slate-100 active:scale-[0.98];
   }
 
   /* Existing Shadow Utilities Preserved */
@@ -133,12 +110,12 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #09090b;
+  background: #0f172a;
 }
 ::-webkit-scrollbar-thumb {
-  background: #27272a;
+  background: #64748b;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #2563eb;
+  background: #d97706;
 }

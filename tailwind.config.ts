@@ -20,15 +20,14 @@ const config: Config = {
     },
     extend: {
       colors: {
-        // Logo Brand Colors
         brand: {
-          black: "#09090B",     // Deep Onyx Black (from geometric logo emblem)
-          blue: "#2563EB",      // Royal Cobalt Blue (from logo bars & tagline)
-          blueHover: "#1D4ED8", // Darker blue for hover states
-          accentBlue: "#3B82F6",// Bright Royal Blue highlight
-          charcoal: "#18181B",  // Slate Charcoal for dark cards/sections
-          slate: "#71717A",     // Muted gray for body prose
-          lightBg: "#F8FAFC",   // Crisp surface background
+          black: "#0F172A",
+          blue: "#1E4270",
+          blueHover: "#18365D",
+          accentBlue: "#D97706",
+          charcoal: "#1E293B",
+          slate: "#64748B",
+          lightBg: "#F8FAFC",
         },
         // Existing Color Palette Overrides / Alignments
         mainBgColor: "#FFFFFF",
